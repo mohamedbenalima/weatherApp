@@ -46,16 +46,12 @@ class AddCityPage extends StatelessWidget {
                   border: const OutlineInputBorder(),
                 ),
                 textEditingController: controller,
+                // Make sure to set the API Key in the config file.
                 googleAPIKey: keyGoogleMaps,
                 debounceTime: 400,
                 // if you require the coordinates from the place details
                 isLatLngRequired: true,
                 getPlaceDetailWithLatLng: (prediction) async {
-                  // this method will return latlng with place detail
-                  // await getWeatherData(
-                  //   lat: double.parse(prediction.lat ?? "0"),
-                  //   lng: double.parse(prediction.lng ?? "0"),
-                  // );
                   log("placeDetails ${prediction.lng} ${prediction.lat}");
 
                   context.read<WeatherProvider>().displayCitie(
